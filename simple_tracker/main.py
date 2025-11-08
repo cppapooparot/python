@@ -1,3 +1,6 @@
+import time
+from tracker import Tracker
+
 def read_config():
 	with open("../config/config.txt", "r") as file:
 		for line in file:
@@ -5,5 +8,9 @@ def read_config():
 			return int(value)
 
 interval = read_config()
-print(interval)
-
+tracker = Tracker()
+while True:
+	tracker.increment()
+	print(tracker)
+	tracker.save_to_file()
+	time.sleep(interval)
