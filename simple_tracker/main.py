@@ -7,6 +7,7 @@ def read_config():
 			value = line.split("=")[1]
 			return int(value)
 
+a = 1
 interval = read_config()
 tracker = Tracker()
 while True:
